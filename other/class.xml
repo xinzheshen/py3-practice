@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CSM build version: 1.2.1.2-->
+<CaseVars>
+	<Group name="class">
+		<Item desc="" name="widget.textview" type="String">android.widget.TextView</Item>
+		<Item desc="" name="widget.imagebutton" type="String">android.widget.ImageButton</Item>
+		<Item desc="" name="app.actionbar_tab" type="String">androidx.appcompat.app.ActionBar$Tab</Item>
+		<Item desc="" name="widget.imageview" type="String">android.widget.ImageView</Item>
+		<Item desc="" name="widget.button" type="String">android.widget.Button</Item>
+		<Item desc="" name="view.view" type="String">android.view.View</Item>
+		<Item desc="" name="view.viewgroup" type="String">android.view.ViewGroup</Item>
+		<Item desc="" name="widget.seekbar" type="String">android.widget.SeekBar</Item>
+		<Item desc="" name="widget.radiobutton" type="String">android.widget.RadioButton</Item>
+	</Group>
+</CaseVars>

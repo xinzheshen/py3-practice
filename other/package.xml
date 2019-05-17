@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CSM build version: 1.2.1.2-->
+<CaseVars>
+	<Group name="package">
+		<Item desc="" name="audioapp" type="String">com.gm.audioapp</Item>
+	</Group>
+</CaseVars>

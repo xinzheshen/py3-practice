@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CSM build version: 1.2.1.2-->
+<CaseVars>
+	<Group name="fm">
+		<Item desc="" name="fm" type="String">com.gm.audioapp:id/tabTitle</Item>
+		<Item desc="" name="now_playing_station__98.9" type="String">com.gm.audioapp:id/metadata_line1_frequency</Item>
+		<Item desc="" name="fm_2" type="String">com.gm.audioapp:id/metadata_line1_rdsstationinfo</Item>
+		<Item desc="" name="red_fm" type="String">com.gm.audioapp:id/metadata_line1_shortstationname</Item>
+		<Item desc="" name="live" type="String">com.gm.audioapp:id/ic_img_audio_stationinfo_live_text_view</Item>
+		<Item desc="" name="leftseek" type="String">com.gm.audioapp:id/img_audio_timeshift_leftseek</Item>
+		<Item desc="" name="rightseek" type="String">com.gm.audioapp:id/img_audio_timeshift_rightseek</Item>
+		<Item desc="" name="tune" type="String">com.gm.audioapp:id/img_audio_tune_to</Item>
+		<Item desc="" name="separator_line" type="String">com.gm.audioapp:id/img_audio_sep</Item>
+		<Item desc="" name="browse" type="String">com.gm.audioapp:id/img_audio_browse</Item>
+		<Item desc="" name="settings" type="String">com.gm.audioapp:id/img_audio_setting</Item>
+		<Item desc="" name="hd" type="String">com.gm.audioapp:id/img_audio_hd</Item>
+		<Item desc="" name="tp" type="String">com.gm.audioapp:id/img_traffic_switch</Item>
+		<Item desc="" name="tab" type="String">NO</Item>
+		<Item desc="" name="hold_to_set" type="String">NO</Item>
+		<Item desc="" name="98.9" type="String">com.gm.audioapp:id/fancy_title( No Resource id in the latest apk )</Item>
+		<Item desc="" name="station_number_image" type="String">com.gm.audioapp:id/image</Item>
+	</Group>
+	<Group name="fm-tune">
+		<Item desc="" name="back_button" type="String">com.gm.audioapp:id/img_back_btn_gmc_rect</Item>
+		<Item desc="" name="tune" type="String">com.gm.audioapp:id/tune_txt_gmc_rect</Item>
+		<Item desc="" name="close_x_" type="String">com.gm.audioapp:id/img_backspace_gmc_rect</Item>
+		<Item desc="" name="0" type="String">com.gm.audioapp:id/direct_tune_txt_zero_gmc_rect</Item>
+		<Item desc="" name="1" type="String">com.gm.audioapp:id/direct_tune_txt_one_gmc_rect</Item>
+		<Item desc="" name="2" type="String">com.gm.audioapp:id/direct_tune_txt_two_gmc_rect</Item>
+		<Item desc="" name="3" type="String">com.gm.audioapp:id/direct_tune_txt_three_gmc_rect</Item>
+		<Item desc="" name="4" type="String">com.gm.audioapp:id/direct_tune_txt_four_gmc_rect</Item>
+		<Item desc="" name="5" type="String">com.gm.audioapp:id/direct_tune_txt_five_gmc_rect</Item>
+		<Item desc="" name="6" type="String">com.gm.audioapp:id/direct_tune_txt_six_gmc_rect</Item>
+		<Item desc="" name="7" type="String">com.gm.audioapp:id/direct_tune_txt_seven_gmc_rect</Item>
+		<Item desc="" name="8" type="String">com.gm.audioapp:id/direct_tune_txt_eight_gmc_rect</Item>
+		<Item desc="" name="9" type="String">com.gm.audioapp:id/direct_tune_txt_nine_gmc_rect</Item>
+		<Item desc="" name="empty_button" type="String">com.gm.audioapp:id/direct_tune_txt_gmc_rect</Item>
+		<Item desc="" name="go" type="String">com.gm.audioapp:id/tuneGO</Item>
+		<Item desc="" name="stright_line" type="String">com.gm.audioapp:id/view_gmc_rect</Item>
+		<Item desc="" name="98.9" type="String">com.gm.audioapp:id/txt_meta_data</Item>
+		<Item desc="" name="favorite" type="String">com.gm.audioapp:id/imageView2</Item>
+	</Group>
+	<Group name="fm-browse">
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/btn_back_gmc_rect</Item>
+		<Item desc="" name="all_stations" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="pop" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="rock" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="talk" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="country" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="classical" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="jazz" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="information" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="music" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="weather" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="search_button" type="String">com.gm.audioapp:id/btn_search_gmc_rect( No Resource id in the latest APK )</Item>
+		<Item desc="" name="favorite" type="String">com.gm.audioapp:id/img_audio_favorite</Item>
+		<Item desc="" name="speaker_icon" type="String">com.gm.audioapp:id/preset_equalizer</Item>
+		<Item desc="" name="up_arrow" type="String">NO</Item>
+		<Item desc="" name="down_arrow" type="String">NO</Item>
+		<Item desc="" name="scroll_bar" type="String">NO</Item>
+		<Item desc="" name="98.9" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+	</Group>
+	<Group name="fm-settings">
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/equa_fade_sound_back_button</Item>
+		<Item desc="" name="equalizer" type="String">NO</Item>
+		<Item desc="" name="sound" type="String">com.gm.audioapp:id/sound_txt_view</Item>
+		<Item desc="" name="fade_balance" type="String">NO</Item>
+		<Item desc="" name="sound_mode" type="String">NO</Item>
+		<Item desc="" name="bass" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="up_arrow" type="String">com.gm.audioapp:id/increment_view</Item>
+		<Item desc="" name="lines" type="String">com.gm.audioapp:id/topbar_container</Item>
+		<Item desc="" name="0" type="String">com.gm.audioapp:id/tone_setting_value</Item>
+		<Item desc="" name="bottomline" type="String">com.gm.audioapp:id/bottombar_container</Item>
+		<Item desc="" name="down_line" type="String">com.gm.audioapp:id/decrement_view</Item>
+		<Item desc="" name="midrange" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="treble" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="reset" type="String">com.gm.audioapp:id/tone_settings_reset_equalizer</Item>
+		<Item desc="" name="line" type="String">com.gm.audioapp:id/id_img_detent_selector12</Item>
+	</Group>
+	<Group name="am">
+		<Item desc="" name="am" type="String">com.gm.audioapp:id/tabTitle</Item>
+		<Item desc="" name="nowplaying_station__530" type="String">com.gm.audioapp:id/metadata_line1_frequency</Item>
+		<Item desc="" name="am_2" type="String">com.gm.audioapp:id/metadata_line1_rdsstationinfo</Item>
+		<Item desc="" name="live" type="String">com.gm.audioapp:id/ic_img_audio_stationinfo_live_text_view</Item>
+		<Item desc="" name="leftseek" type="String">com.gm.audioapp:id/img_audio_timeshift_leftseek</Item>
+		<Item desc="" name="right_seek" type="String">com.gm.audioapp:id/img_audio_timeshift_rightseek</Item>
+		<Item desc="" name="tune" type="String">com.gm.audioapp:id/img_audio_tune_to</Item>
+		<Item desc="" name="line" type="String">com.gm.audioapp:id/img_audio_sep</Item>
+		<Item desc="" name="browse" type="String">com.gm.audioapp:id/img_audio_browse</Item>
+		<Item desc="" name="setting" type="String">com.gm.audioapp:id/img_audio_setting</Item>
+		<Item desc="" name="hd" type="String">com.gm.audioapp:id/img_audio_hd</Item>
+		<Item desc="" name="hold_to_set" type="String">NO</Item>
+		<Item desc="" name="dot" type="String">NO</Item>
+		<Item desc="" name="530" type="String">com.gm.audioapp:id/fancy_title</Item>
+	</Group>
+	<Group name="am-browse">
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/btn_back_gmc_rect</Item>
+		<Item desc="" name="all_stations" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="pop" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="rock" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="talk" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="country" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="classical" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="jazz" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="information" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="music" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="weather" type="String">com.gm.audioapp:id/simpleTextView</Item>
+		<Item desc="" name="search_button" type="String">com.gm.audioapp:id/btn_search_gmc_rect</Item>
+		<Item desc="" name="favorite" type="String">com.gm.audioapp:id/img_audio_favorite</Item>
+		<Item desc="" name="speaker_icon" type="String">com.gm.audioapp:id/preset_equalizer</Item>
+		<Item desc="" name="up_arrow" type="String">NO</Item>
+		<Item desc="" name="down_arrow" type="String">NO</Item>
+		<Item desc="" name="scroll_bar" type="String">NO</Item>
+		<Item desc="" name="530" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+	</Group>
+	<Group name="am-tune">
+		<Item desc="" name="back_button" type="String">com.gm.audioapp:id/img_back_btn_gmc_rect</Item>
+		<Item desc="" name="tune" type="String">com.gm.audioapp:id/tune_txt_gmc_rect</Item>
+		<Item desc="" name="close_x_" type="String">com.gm.audioapp:id/img_backspace_gmc_rect</Item>
+		<Item desc="" name="0" type="String">com.gm.audioapp:id/direct_tune_txt_zero_gmc_rect</Item>
+		<Item desc="" name="1" type="String">com.gm.audioapp:id/direct_tune_txt_one_gmc_rect</Item>
+		<Item desc="" name="2" type="String">com.gm.audioapp:id/direct_tune_txt_two_gmc_rect</Item>
+		<Item desc="" name="3" type="String">com.gm.audioapp:id/direct_tune_txt_three_gmc_rect</Item>
+		<Item desc="" name="4" type="String">com.gm.audioapp:id/direct_tune_txt_four_gmc_rect</Item>
+		<Item desc="" name="5" type="String">com.gm.audioapp:id/direct_tune_txt_five_gmc_rect</Item>
+		<Item desc="" name="6" type="String">com.gm.audioapp:id/direct_tune_txt_six_gmc_rect</Item>
+		<Item desc="" name="7" type="String">com.gm.audioapp:id/direct_tune_txt_seven_gmc_rect</Item>
+		<Item desc="" name="8" type="String">com.gm.audioapp:id/direct_tune_txt_eight_gmc_rect</Item>
+		<Item desc="" name="9" type="String">com.gm.audioapp:id/direct_tune_txt_nine_gmc_rect</Item>
+		<Item desc="" name="empty_button" type="String">com.gm.audioapp:id/direct_tune_txt_gmc_rect</Item>
+		<Item desc="" name="go" type="String">com.gm.audioapp:id/tuneGO</Item>
+		<Item desc="" name="stright_line" type="String">com.gm.audioapp:id/view_gmc_rect</Item>
+		<Item desc="" name="530" type="String">com.gm.audioapp:id/txt_meta_data</Item>
+		<Item desc="" name="favorite" type="String">com.gm.audioapp:id/imageView2</Item>
+	</Group>
+	<Group name="am-settings">
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/equa_fade_sound_back_button</Item>
+		<Item desc="" name="equalizer" type="String">NO</Item>
+		<Item desc="" name="sound" type="String">com.gm.audioapp:id/sound_txt_view</Item>
+		<Item desc="" name="fade_balance" type="String">NO</Item>
+		<Item desc="" name="sound_mode" type="String">NO</Item>
+		<Item desc="" name="bass" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="up_arrow" type="String">com.gm.audioapp:id/increment_view</Item>
+		<Item desc="" name="lines" type="String">com.gm.audioapp:id/topbar_container</Item>
+		<Item desc="" name="0" type="String">com.gm.audioapp:id/tone_setting_value</Item>
+		<Item desc="" name="bottomline" type="String">com.gm.audioapp:id/bottombar_container</Item>
+		<Item desc="" name="down_line" type="String">com.gm.audioapp:id/decrement_view</Item>
+		<Item desc="" name="midrange" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="treble" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="reset" type="String">com.gm.audioapp:id/tone_settings_reset</Item>
+		<Item desc="" name="line" type="String">com.gm.audioapp:id/id_img_detent_selector12</Item>
+	</Group>
+	<Group name="usbmsd">
+		<Item desc="" name="usbmsd" type="String">com.gm.audioapp:id/tabTitle</Item>
+		<Item desc="" name="bang_bang_bangkok_[www.atozmp3.in]" type="String">com.gm.audioapp:id/metadata_line1_frequency</Item>
+		<Item desc="" name="kumari_21_f__2015_" type="String">com.gm.audioapp:id/metadata_line1_rdsstationinfo</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__rita" type="String">com.gm.audioapp:id/metadata_line1_shortstationname</Item>
+		<Item desc="" name="1:10" type="String">com.gm.audioapp:id/elapsed</Item>
+		<Item desc="" name="seek_bar" type="String">com.gm.audioapp:id/seek_bar</Item>
+		<Item desc="" name="3.1" type="String">com.gm.audioapp:id/duration</Item>
+		<Item desc="" name="pause_play" type="String">com.gm.audioapp:id/pause</Item>
+		<Item desc="" name="leftseek" type="String">com.gm.audioapp:id/img_usb_audio_timeshift_leftseek</Item>
+		<Item desc="" name="right_seek" type="String">com.gm.audioapp:id/img_usb_audio_timeshift_rightseek</Item>
+		<Item desc="" name="shuffle" type="String">com.gm.audioapp:id/img_audio_usb_shuffle</Item>
+		<Item desc="" name="repeat" type="String">com.gm.audioapp:id/img_audio_usb_repeat</Item>
+		<Item desc="" name="line" type="String">com.gm.audioapp:id/img_audio_sep</Item>
+		<Item desc="" name="browse" type="String">com.gm.audioapp:id/img_audio_usb_browse</Item>
+		<Item desc="" name="settings" type="String">com.gm.audioapp:id/img_audio_setting</Item>
+		<Item desc="" name="dot" type="String">NO</Item>
+	</Group>
+	<Group name="usb-browse">
+		<Item desc="" name="browse" type="String">com.gm.audioapp:id/text</Item>
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/usb_browse_back</Item>
+		<Item desc="" name="close" type="String">com.gm.audioapp:id/usb_browse_close</Item>
+		<Item desc="" name="playlists" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="artists" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="songs" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="albums" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="genres" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="itunes_radio" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="scroll" type="String">NO</Item>
+		<Item desc="" name="compilations" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="composers" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="folder" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="podcasts" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="audiobooks" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="videos" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="playlists_2" type="String">com.gm.audioapp:id/text</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__ritati" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="speaker_icon" type="String">com.gm.audioapp:id/img_audio_volume</Item>
+		<Item desc="" name="favorite" type="String">com.gm.audioapp:id/img_audio_favorite</Item>
+	</Group>
+	<Group name="usbmsd-settings">
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/img_back_button</Item>
+		<Item desc="" name="equalizer" type="String">NO</Item>
+		<Item desc="" name="sound" type="String">com.gm.audioapp:id/sound_txt_view</Item>
+		<Item desc="" name="fade_balance" type="String">NO</Item>
+		<Item desc="" name="sound_mode" type="String">NO</Item>
+		<Item desc="" name="bass" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="up_arrow" type="String">com.gm.audioapp:id/increment_view</Item>
+		<Item desc="" name="lines" type="String">com.gm.audioapp:id/topbar_container</Item>
+		<Item desc="" name="0" type="String">com.gm.audioapp:id/tone_setting_value</Item>
+		<Item desc="" name="bottomline" type="String">com.gm.audioapp:id/bottombar_container</Item>
+		<Item desc="" name="down_line" type="String">com.gm.audioapp:id/decrement_view</Item>
+		<Item desc="" name="midrange" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="treble" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="reset" type="String">com.gm.audioapp:id/tone_settings_reset_equalizer</Item>
+		<Item desc="" name="line" type="String">com.gm.audioapp:id/id_img_detent_selector12</Item>
+	</Group>
+	<Group name="sd">
+		<Item desc="" name="sd" type="String">com.gm.audioapp:id/tabTitle</Item>
+		<Item desc="" name="bang_bang_bangkok_[www.atozmp3.in]" type="String">com.gm.audioapp:id/metadata_line1_frequency</Item>
+		<Item desc="" name="kumari_21_f__2015_" type="String">com.gm.audioapp:id/metadata_line1_rdsstationinfo</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__rita" type="String">com.gm.audioapp:id/metadata_line1_shortstationname</Item>
+		<Item desc="" name="0.24" type="String">com.gm.audioapp:id/elapsed</Item>
+		<Item desc="" name="seek_bar" type="String">com.gm.audioapp:id/seek_bar</Item>
+		<Item desc="" name="-3.08" type="String">com.gm.audioapp:id/duration</Item>
+		<Item desc="" name="pause_play" type="String">com.gm.audioapp:id/pause</Item>
+		<Item desc="" name="leftseek" type="String">com.gm.audioapp:id/img_usb_audio_timeshift_leftseek</Item>
+		<Item desc="" name="right_seek" type="String">com.gm.audioapp:id/img_usb_audio_timeshift_rightseek</Item>
+		<Item desc="" name="shuffle" type="String">com.gm.audioapp:id/img_audio_usb_shuffle</Item>
+		<Item desc="" name="repeat" type="String">com.gm.audioapp:id/img_audio_usb_repeat</Item>
+		<Item desc="" name="line" type="String">com.gm.audioapp:id/img_audio_sep</Item>
+		<Item desc="" name="browse" type="String">com.gm.audioapp:id/img_audio_usb_browse</Item>
+		<Item desc="" name="settings" type="String">com.gm.audioapp:id/img_audio_setting</Item>
+		<Item desc="" name="dot" type="String">NO</Item>
+	</Group>
+	<Group name="sd-browse">
+		<Item desc="" name="browse" type="String">com.gm.audioapp:id/text</Item>
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/usb_browse_back</Item>
+		<Item desc="" name="close" type="String">com.gm.audioapp:id/usb_browse_close</Item>
+		<Item desc="" name="playlists" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="artists" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="songs" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="albums" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="genres" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="itunes_radio" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="scroll" type="String">NO</Item>
+		<Item desc="" name="compilations" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="composers" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="folder" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="podcasts" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="audiobooks" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="videos" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="playlists_2" type="String">com.gm.audioapp:id/text</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__ritati" type="String">com.gm.audioapp:id/preset_item_metadata</Item>
+		<Item desc="" name="speaker_icon" type="String">com.gm.audioapp:id/img_audio_volume</Item>
+		<Item desc="" name="favorite" type="String">com.gm.audioapp:id/img_audio_favorite</Item>
+	</Group>
+	<Group name="sd-settings">
+		<Item desc="" name="back" type="String">com.gm.audioapp:id/equa_fade_sound_back_button</Item>
+		<Item desc="" name="equalizer" type="String">NO</Item>
+		<Item desc="" name="sound" type="String">com.gm.audioapp:id/sound_txt_view</Item>
+		<Item desc="" name="fade_balance" type="String">NO</Item>
+		<Item desc="" name="sound_mode" type="String">NO</Item>
+		<Item desc="" name="bass" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="up_arrow" type="String">com.gm.audioapp:id/increment_view</Item>
+		<Item desc="" name="lines" type="String">com.gm.audioapp:id/topbar_container</Item>
+		<Item desc="" name="0" type="String">com.gm.audioapp:id/tone_setting_value</Item>
+		<Item desc="" name="bottomline" type="String">com.gm.audioapp:id/bottombar_container</Item>
+		<Item desc="" name="down_line" type="String">com.gm.audioapp:id/decrement_view</Item>
+		<Item desc="" name="midrange" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="treble" type="String">com.gm.audioapp:id/tone_control_label</Item>
+		<Item desc="" name="reset" type="String">com.gm.audioapp:id/tone_settings_reset_equalizer</Item>
+		<Item desc="" name="line" type="String">com.gm.audioapp:id/id_img_detent_selector12</Item>
+		<Item desc="" name="sxm" type="String">NO</Item>
+		<Item desc="" name="no_device_connected" type="String">NO</Item>
+	</Group>
+	<Group name="more">
+		<Item desc="" name="more" type="String">com.gm.audioapp:id/tabTitle</Item>
+		<Item desc="" name="sources" type="String">com.gm.audioapp:id/txt_audio_source</Item>
+		<Item desc="" name="icon" type="String">com.gm.audioapp:id/img_sources</Item>
+		<Item desc="" name="am" type="String">com.gm.audioapp:id/audio_sources</Item>
+		<Item desc="" name="fm" type="String">com.gm.audioapp:id/audio_sources</Item>
+		<Item desc="" name="dab" type="String">com.gm.audioapp:id/audio_sources</Item>
+		<Item desc="" name="bluetooth" type="String">com.gm.audioapp:id/audio_sources</Item>
+		<Item desc="" name="usbmsd" type="String">com.gm.audioapp:id/audio_sources</Item>
+		<Item desc="" name="sd" type="String">com.gm.audioapp:id/audio_sources</Item>
+		<Item desc="" name="back_button" type="String">com.gm.audioapp:id/img_back_button</Item>
+	</Group>
+	<Group name="top_bar">
+		<Item desc="" name="iphone_x" type="String">com.gm.audioapp:id/id_txt_device_name</Item>
+		<Item desc="" name="signal_and_bluethooth" type="String">com.gm.audioapp:id/id_phone_outgoingphone_cellsignalstrength   </Item>
+		<Item desc="" name="battery" type="String">com.gm.audioapp:id/id_phone_outgoingphone_cellstateofcharge</Item>
+		<Item desc="" name="jane_doe" type="String">com.gm.audioapp:id/txt_user_name</Item>
+		<Item desc="" name="11:30" type="String">com.gm.audioapp:id/txt_time</Item>
+	</Group>
+	<Group name="left_bar">
+		<Item desc="" name="car" type="String">com.gm.audioapp:id/left_img</Item>
+		<Item desc="" name="i" type="String">com.gm.audioapp:id/left_img</Item>
+		<Item desc="" name="phone_symbol" type="String">com.gm.audioapp:id/left_img</Item>
+		<Item desc="" name="up_arrow" type="String">com.gm.audioapp:id/left_img</Item>
+		<Item desc="" name="music_symbol" type="String">com.gm.audioapp:id/left_img</Item>
+		<Item desc="" name="home_button" type="String">com.gm.audioapp:id/left_img</Item>
+		<Item desc="" name="micro_phone" type="String">com.gm.audioapp:id/left_img</Item>
+	</Group>
+	<Group name="car">
+		<Item desc="" name="configuration" type="String"></Item>
+		<Item desc="" name="please_select_theme" type="String">com.gm.audioapp:id/text</Item>
+		<Item desc="" name="sprite_ui" type="String">com.gm.audioapp:id/radioButton1</Item>
+		<Item desc="" name="axure_ui" type="String">com.gm.audioapp:id/radioButton2</Item>
+		<Item desc="" name="select_layout_direction" type="String">com.gm.audioapp:id/text_direction_selection</Item>
+		<Item desc="" name="lhd" type="String">com.gm.audioapp:id/lhdRadiButton</Item>
+		<Item desc="" name="rhd" type="String">com.gm.audioapp:id/rhdRadioButton</Item>
+		<Item desc="" name="rtl" type="String">com.gm.audioapp:id/rtlRadioButton</Item>
+		<Item desc="" name="info_3.5c_mode" type="String">com.gm.audioapp:id/SideBar</Item>
+		<Item desc="" name="enable" type="String">com.gm.audioapp:id/SideBarEnable</Item>
+		<Item desc="" name="disable" type="String">com.gm.audioapp:id/SideBarDisable</Item>
+		<Item desc="" name="info_3.5c_curve_mode" type="String">com.gm.audioapp:id/curvedDisplay</Item>
+		<Item desc="" name="enable_2" type="String">com.gm.audioapp:id/curveEnable</Item>
+		<Item desc="" name="disable_2" type="String">com.gm.audioapp:id/curveDisable</Item>
+		<Item desc="" name="skew" type="String">com.gm.audioapp:id/Skew</Item>
+		<Item desc="" name="enable_3" type="String">com.gm.audioapp:id/SkewEnable</Item>
+		<Item desc="" name="disable_3" type="String">com.gm.audioapp:id/SkewDisable</Item>
+		<Item desc="" name="submit" type="String">com.gm.audioapp:id/imageButton2</Item>
+	</Group>
+</CaseVars>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CSM build version: 1.2.1.2-->
+<CaseVars>
+	<Group name="fm">
+		<Item desc="" name="fm" type="String">FM</Item>
+		<Item desc="" name="now_playing_station__98.9" type="String">Now playing Station  98.9</Item>
+		<Item desc="" name="red_fm" type="String">Red FM</Item>
+		<Item desc="" name="live" type="String">LIVE</Item>
+		<Item desc="" name="hold_to_set" type="String">Hold to Set</Item>
+		<Item desc="" name="98.9" type="String">98.9</Item>
+	</Group>
+	<Group name="fm-tune">
+		<Item desc="" name="tune" type="String">Tune</Item>
+		<Item desc="" name="0" type="String">0</Item>
+		<Item desc="" name="1" type="String">1</Item>
+		<Item desc="" name="2" type="String">2</Item>
+		<Item desc="" name="3" type="String">3</Item>
+		<Item desc="" name="4" type="String">4</Item>
+		<Item desc="" name="5" type="String">5</Item>
+		<Item desc="" name="6" type="String">6</Item>
+		<Item desc="" name="7" type="String">7</Item>
+		<Item desc="" name="8" type="String">8</Item>
+		<Item desc="" name="9" type="String">9</Item>
+		<Item desc="" name="go" type="String">Go</Item>
+		<Item desc="" name="98.9" type="String">98.9</Item>
+	</Group>
+	<Group name="fm-browse">
+		<Item desc="" name="all_stations" type="String">All Stations</Item>
+		<Item desc="" name="pop" type="String">Pop</Item>
+		<Item desc="" name="rock" type="String">Rock</Item>
+		<Item desc="" name="talk" type="String">Talk</Item>
+		<Item desc="" name="country" type="String">Country</Item>
+		<Item desc="" name="classical" type="String">Classical</Item>
+		<Item desc="" name="jazz" type="String">Jazz</Item>
+		<Item desc="" name="information" type="String">Information</Item>
+		<Item desc="" name="music" type="String">Music</Item>
+		<Item desc="" name="weather" type="String">Weather</Item>
+		<Item desc="" name="98.9" type="String">98.9</Item>
+	</Group>
+	<Group name="fm-settings">
+		<Item desc="" name="equalizer" type="String">Equalizer</Item>
+		<Item desc="" name="sound" type="String">Sound</Item>
+		<Item desc="" name="fade_balance" type="String">Fade/Balance</Item>
+		<Item desc="" name="sound_mode" type="String">Sound Mode</Item>
+		<Item desc="" name="bass" type="String">Bass</Item>
+		<Item desc="" name="0" type="String">0</Item>
+		<Item desc="" name="midrange" type="String">Midrange</Item>
+		<Item desc="" name="treble" type="String">Treble</Item>
+		<Item desc="" name="reset" type="String">Reset</Item>
+	</Group>
+	<Group name="am">
+		<Item desc="" name="am" type="String">AM</Item>
+		<Item desc="" name="nowplaying_station__530" type="String">Nowplaying Station  530</Item>
+		<Item desc="" name="live" type="String">LIVE</Item>
+		<Item desc="" name="hold_to_set" type="String">Hold to Set</Item>
+		<Item desc="" name="530" type="String">530</Item>
+	</Group>
+	<Group name="am-browse">
+		<Item desc="" name="all_stations" type="String">All Stations</Item>
+		<Item desc="" name="pop" type="String">Pop</Item>
+		<Item desc="" name="rock" type="String">Rock</Item>
+		<Item desc="" name="talk" type="String">Talk</Item>
+		<Item desc="" name="country" type="String">Country</Item>
+		<Item desc="" name="classical" type="String">Classical</Item>
+		<Item desc="" name="jazz" type="String">Jazz</Item>
+		<Item desc="" name="information" type="String">Information</Item>
+		<Item desc="" name="music" type="String">Music</Item>
+		<Item desc="" name="weather" type="String">Weather</Item>
+		<Item desc="" name="530" type="String">530</Item>
+	</Group>
+	<Group name="am-tune">
+		<Item desc="" name="tune" type="String">Tune</Item>
+		<Item desc="" name="0" type="String">0</Item>
+		<Item desc="" name="1" type="String">1</Item>
+		<Item desc="" name="2" type="String">2</Item>
+		<Item desc="" name="3" type="String">3</Item>
+		<Item desc="" name="4" type="String">4</Item>
+		<Item desc="" name="5" type="String">5</Item>
+		<Item desc="" name="6" type="String">6</Item>
+		<Item desc="" name="7" type="String">7</Item>
+		<Item desc="" name="8" type="String">8</Item>
+		<Item desc="" name="9" type="String">9</Item>
+		<Item desc="" name="go" type="String">Go</Item>
+		<Item desc="" name="530" type="String">530</Item>
+	</Group>
+	<Group name="am-settings">
+		<Item desc="" name="equalizer" type="String">Equalizer</Item>
+		<Item desc="" name="sound" type="String">Sound</Item>
+		<Item desc="" name="fade_balance" type="String">Fade/Balance</Item>
+		<Item desc="" name="sound_mode" type="String">Sound Mode</Item>
+		<Item desc="" name="bass" type="String">Bass</Item>
+		<Item desc="" name="0" type="String">0</Item>
+		<Item desc="" name="midrange" type="String">Midrange</Item>
+		<Item desc="" name="treble" type="String">Treble</Item>
+		<Item desc="" name="reset" type="String">Reset</Item>
+	</Group>
+	<Group name="usbmsd">
+		<Item desc="" name="usbmsd" type="String">USBMSD</Item>
+		<Item desc="" name="bang_bang_bangkok_[www.atozmp3.in]" type="String">Bang Bang Bangkok [www.AtoZmp3.in]</Item>
+		<Item desc="" name="kumari_21_f__2015_" type="String">Kumari 21 F (2015)</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__rita" type="String">Deⅵ Sri Prasad, Ran㏌a Reddy, Rita</Item>
+		<Item desc="" name="1:10" type="String">1:10</Item>
+		<Item desc="" name="3.1" type="String">3.1</Item>
+	</Group>
+	<Group name="usb-browse">
+		<Item desc="" name="browse" type="String">Browse</Item>
+		<Item desc="" name="playlists" type="String">Playlists</Item>
+		<Item desc="" name="artists" type="String">Artists</Item>
+		<Item desc="" name="songs" type="String">Songs</Item>
+		<Item desc="" name="albums" type="String">Albums</Item>
+		<Item desc="" name="genres" type="String">Genres</Item>
+		<Item desc="" name="itunes_radio" type="String">iTunes Radio</Item>
+		<Item desc="" name="compilations" type="String">Compilations</Item>
+		<Item desc="" name="composers" type="String">Composers</Item>
+		<Item desc="" name="folder" type="String">Folder</Item>
+		<Item desc="" name="podcasts" type="String">Podcasts</Item>
+		<Item desc="" name="audiobooks" type="String">Audiobooks</Item>
+		<Item desc="" name="videos" type="String">Videos</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__ritati" type="String">Deⅵ Sri Prasad, Ran㏌a Reddy, Ritati</Item>
+	</Group>
+	<Group name="usbmsd-settings">
+		<Item desc="" name="equalizer" type="String">Equalizer</Item>
+		<Item desc="" name="sound" type="String">Sound</Item>
+		<Item desc="" name="fade_balance" type="String">Fade/Balance</Item>
+		<Item desc="" name="sound_mode" type="String">Sound Mode</Item>
+		<Item desc="" name="bass" type="String">Bass</Item>
+		<Item desc="" name="0" type="String">0</Item>
+		<Item desc="" name="midrange" type="String">Midrange</Item>
+		<Item desc="" name="treble" type="String">Treble</Item>
+		<Item desc="" name="reset" type="String">Reset</Item>
+	</Group>
+	<Group name="sd">
+		<Item desc="" name="sd" type="String">SD</Item>
+		<Item desc="" name="bang_bang_bangkok_[www.atozmp3.in]" type="String">Bang Bang Bangkok [www.AtoZmp3.in]</Item>
+		<Item desc="" name="kumari_21_f__2015_" type="String">Kumari 21 F (2015)</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__rita" type="String">Deⅵ Sri Prasad, Ran㏌a Reddy, Rita</Item>
+		<Item desc="" name="0.24" type="String">0.24</Item>
+		<Item desc="" name="-3.08" type="String">-3.08</Item>
+	</Group>
+	<Group name="sd-browse">
+		<Item desc="" name="browse" type="String">Browse</Item>
+		<Item desc="" name="playlists" type="String">Playlists</Item>
+		<Item desc="" name="artists" type="String">Artists</Item>
+		<Item desc="" name="songs" type="String">Songs</Item>
+		<Item desc="" name="albums" type="String">Albums</Item>
+		<Item desc="" name="genres" type="String">Genres</Item>
+		<Item desc="" name="itunes_radio" type="String">iTunes Radio</Item>
+		<Item desc="" name="compilations" type="String">Compilations</Item>
+		<Item desc="" name="composers" type="String">Composers</Item>
+		<Item desc="" name="folder" type="String">Folder</Item>
+		<Item desc="" name="podcasts" type="String">Podcasts</Item>
+		<Item desc="" name="audiobooks" type="String">Audiobooks</Item>
+		<Item desc="" name="videos" type="String">Videos</Item>
+		<Item desc="" name="deⅵ_sri_prasad__ran㏌a_reddy__ritati" type="String">Deⅵ Sri Prasad, Ran㏌a Reddy, Ritati</Item>
+	</Group>
+	<Group name="sd-settings">
+		<Item desc="" name="equalizer" type="String">Equalizer</Item>
+		<Item desc="" name="sound" type="String">Sound</Item>
+		<Item desc="" name="fade_balance" type="String">Fade/Balance</Item>
+		<Item desc="" name="sound_mode" type="String">Sound Mode</Item>
+		<Item desc="" name="bass" type="String">Bass</Item>
+		<Item desc="" name="0" type="String">0</Item>
+		<Item desc="" name="midrange" type="String">Midrange</Item>
+		<Item desc="" name="treble" type="String">Treble</Item>
+		<Item desc="" name="reset" type="String">Reset</Item>
+		<Item desc="" name="sxm" type="String">SXM</Item>
+		<Item desc="" name="no_device_connected" type="String">No Device Connected</Item>
+	</Group>
+	<Group name="more">
+		<Item desc="" name="more" type="String">More</Item>
+		<Item desc="" name="sources" type="String">Sources</Item>
+		<Item desc="" name="am" type="String">AM</Item>
+		<Item desc="" name="fm" type="String">FM</Item>
+		<Item desc="" name="dab" type="String">DAB</Item>
+		<Item desc="" name="bluetooth" type="String">Bluetooth</Item>
+		<Item desc="" name="usbmsd" type="String">USBMSD</Item>
+		<Item desc="" name="sd" type="String">SD</Item>
+	</Group>
+	<Group name="top_bar">
+		<Item desc="" name="iphone_x" type="String">iPhone X</Item>
+		<Item desc="" name="jane_doe" type="String">Jane Doe</Item>
+		<Item desc="" name="11:30" type="String">11:30</Item>
+	</Group>
+	<Group name="left_bar"/>
+	<Group name="car">
+		<Item desc="" name="please_select_theme" type="String">Please Select Theme</Item>
+		<Item desc="" name="sprite_ui" type="String">Sprite UI</Item>
+		<Item desc="" name="axure_ui" type="String">Axure UI</Item>
+		<Item desc="" name="select_layout_direction" type="String">Select Layout Direction</Item>
+		<Item desc="" name="lhd" type="String">LHD</Item>
+		<Item desc="" name="rhd" type="String">RHD</Item>
+		<Item desc="" name="rtl" type="String">RTL</Item>
+		<Item desc="" name="info_3.5c_mode" type="String">Info 3.5c Mode</Item>
+		<Item desc="" name="enable" type="String">Enable</Item>
+		<Item desc="" name="disable" type="String">Disable</Item>
+		<Item desc="" name="info_3.5c_curve_mode" type="String">Info 3.5c Curve Mode</Item>
+		<Item desc="" name="skew" type="String">Skew</Item>
+		<Item desc="" name="submit" type="String">Submit</Item>
+	</Group>
+</CaseVars>
