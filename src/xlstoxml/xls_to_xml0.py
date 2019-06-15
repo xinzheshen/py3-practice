@@ -19,7 +19,7 @@ def read_excel():
 
     # 文件位置
 
-    excelFile = xlrd.open_workbook(r'D:\cats\bugs\1647exceltoxml\Sample\Audio_App_properties_Details.xlsx')
+    excelFile = xlrd.open_workbook(r'D:\cats\bugs\1647exceltoxml\Sample\11.xlsx')
 
     # 获取目标EXCEL文件sheet名
 
