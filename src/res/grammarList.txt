@@ -1,1 +1,2 @@
 ﻿Audio Command Please
+say play followed by a media selection or say tune followed by a station number
