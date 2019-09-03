@@ -37,6 +37,7 @@ def test7():
     for i in range(10000):
         li = li + [i]
 
+
 # 测试性能
 timer1 = Timer("test1()", "from __main__ import test1")
 print("append:", timer1.timeit(1000)) # 1.3826961190120473
@@ -51,4 +52,4 @@ print("extend:", timer5.timeit(1000)) # 1.7666775668385166
 timer6 = Timer("test6()", "from __main__ import test6")
 print("insert:", timer6.timeit(1000)) # 42.77878607744147
 timer7 = Timer("test7()", "from __main__ import test7")
-print("+:", timer7.timeit(1000)) # 42.77878607744147
+print("+:", timer7.timeit(1000)) # 154.8507259
