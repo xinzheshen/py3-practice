@@ -22,3 +22,9 @@ print(int('1011', 2))
 # 十六进制转二进制
 print("-"*15)
 print(bin(int('b', 16)))
+
+
+msg = 4 << 4 | 1
+# 0=2 表示不足2位时保留2位，空位用0补
+msg_hex = "{:0=2X}".format(msg)
+print(msg_hex)

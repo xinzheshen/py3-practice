@@ -27,3 +27,8 @@ def is_port_in_use(port):
         return s.connect_ex(('0.0.0.0', port)) == 0
 
 print(is_port_in_use(9005))
+
+
+from test_class import testClass
+testClass()
+print("end")

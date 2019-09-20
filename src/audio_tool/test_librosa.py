@@ -1,9 +1,36 @@
 import librosa
 
+import matplotlib as plt
+
+def get_short_time_fourier_transform(soundwave):
+    return librosa.stft(soundwave, n_fft=1024)
+
+def short_time_fourier_transform_amplitude_to_db(stft):
+    return librosa.amplitude_to_db(stft)
+
+def soundwave_to_np_spectogram(soundwave):
+    step1 = get_short_time_fourier_transform(soundwave)
+    step2 = short_time_fourier_transform_amplitude_to_db(step1)
+    step3 = step2/100
+    return step3
+
+def inspect_data(sound):
+    plt.figure()
+    plt.plot(sound)
+    # IPython.display.display(IPython.display.Audio(sound, rate=SR))
+    a = get_short_time_fourier_transform(sound)
+    Xdb = short_time_fourier_transform_amplitude_to_db(a)
+    plt.figure()
+    plt.imshow(Xdb)
+    plt.show()
+    print("Length per sample: %d, shape of spectogram: %s, max: %f min: %f" % (len(sound), str(Xdb.shape), Xdb.max(), Xdb.min()))
+
 # y, sr = librosa.load(librosa.util.example_audio_file(), offset=30, duration=2.0)
-y, sr = librosa.load(r"D:\cats\audios\chimes\615_715\audio_with_615.wav")
+# y, sr = librosa.load(r"D:\cats\audios\chimes\615_715\real\7000_615_7000_not_mix_with_dwell.wav")
+y, sr = librosa.load(r"D:\cats\audios\chimes\615_715\real\615.wav")
 onset_frames = librosa.onset.onset_detect(y=y, sr=sr)
 print(librosa.frames_to_time(onset_frames, sr=sr))
+# result = soundwave_to_np_spectogram(y)
 
 
 def detect_mix_for_audio_with_single_and_multi_freq(pow_spec):
@@ -125,3 +152,5 @@ def detect_mix_for_audio_with_single_and_multi_freq(pow_spec):
 
             result[number] = (start, index)
     return result, max_valid_freq
+
+

@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import traceback
 
 import numpy as np
 import scipy.io.wavfile
@@ -7,16 +8,24 @@ from collections import OrderedDict
 import sys
 import time
 import argparse
+import librosa
+
 
 # whether the audio file has sound, yes(1), no(2)
 exit_code_first = 2
 # whether the sound changes to mute(1) , slowly_down(2), not_change(3)
 exit_code_second = 0
+# whether the audio file has silence because of "Dwell time" after chime, yes(1), no(2)
+exit_code_third = 2
 # whether the sound recovers back after mute or slowly down, yes(1), no(2)
-exit_code_third = 0
+exit_code_fourth = 0
 
 frame_size = 0.025
 frame_stride = 0.01
+frame_length = 0
+frame_step = 0
+sample_rate = 0
+
 n_fft = 1024
 
 
@@ -105,7 +114,8 @@ def detect_mix_for_audio_only_with_single_freq(pow_spec):
     return result
 
 
-def detect_mix_for_audio_with_single_and_multi_freq(pow_spec):
+def detect_mix_for_audio_with_single_and_multi_freq(pow_spec, sample_rate):
+    print("Detecting sections...")
     global exit_code_first
     result = OrderedDict()
     start = 0
@@ -115,27 +125,29 @@ def detect_mix_for_audio_with_single_and_multi_freq(pow_spec):
     multi_freq_section = False
     max_valid_freq = 0
     current_section_is_single = True
-    last_section_is_single = True
 
     # hard code
     base_power = 5000
     base_power_scale = 0.0001
-    freq_scope = int(n_fft / 4)
-    single_freq_threshold = 400
+    if sample_rate == 16000:
+        freq_scope = int(n_fft / 4)
+        single_freq_threshold = 400
+    else:
+        freq_scope = int(n_fft / 8)
+        single_freq_threshold = 150
 
     for index, powers in enumerate(pow_spec):
         max_power_freq_index = np.argmax(powers)
         max_power = powers[max_power_freq_index]
-        max_valid_freq = max_valid_freq if (max_valid_freq > max_power_freq_index) else max_power_freq_index
+
         # Normally the power should be bigger than base_power when there is voice
         if max_power > base_power:
+            max_valid_freq = max_valid_freq if (max_valid_freq > max_power_freq_index) else max_power_freq_index
             exit_code_first = 1
-            valid_frequencies = np.where(powers > max_power * base_power_scale)
+            condition = base_power if base_power > max_power * base_power_scale else max_power * base_power_scale
+            valid_frequencies = np.where(powers > condition)
             max_freq = max(valid_frequencies[0])
             min_freq = min(valid_frequencies[0])
-
-            if index == 143:
-                print(max_freq, min_freq)
 
             # judge the valid freq scope, if true, it says it's the same audio
             if (max_freq - min_freq) < freq_scope:
@@ -163,18 +175,17 @@ def detect_mix_for_audio_with_single_and_multi_freq(pow_spec):
                         current_section_is_single = False
                 else:
                     last_result = result[number]
-                    # Sometimes there is silence in chime, assume the silence is less than 10（0.1 second）
-                    if last_result[1] - last_result[0] > 10:
-                        number += 1
-                        start = index
-                        current_section_is_single = not last_result[2]
+                    # if last_result[1] - last_result[0] > 15:
+                    number += 1
+                    start = index
+                    current_section_is_single = not last_result[2]
 
             result[number] = [start, index, current_section_is_single]
     return result, max_valid_freq
 
 
-def analyze_every_section(pow_spec, result, max_freq, multi_freq_section=2):
-    global exit_code_second, exit_code_third
+def analyze_every_section(pow_spec, result, max_freq):
+    global exit_code_second, exit_code_third, exit_code_fourth
     if len(result) == 3:
         first_duration = result[1]
         first_duration_mean_power_of_max_freq = np.mean(pow_spec[first_duration[0]: first_duration[1], max_freq])
@@ -192,38 +203,119 @@ def analyze_every_section(pow_spec, result, max_freq, multi_freq_section=2):
             exit_code_second = 2
         else:
             exit_code_second = 3
-        print("second_diff_ratio:", "%.4f" % second_diff_ratio)
+        # print("second_first_diff_ratio:", "%.4f" % second_diff_ratio)
 
         third_diff_ratio = abs(first_duration_mean_power_of_max_freq - third_duration_mean_power_of_max_freq) / first_duration_mean_power_of_max_freq
         if third_diff_ratio < 0.1:
-            exit_code_third = 1
+            exit_code_fourth = 1
         else:
-            exit_code_third = 2
-        print("third_diff_ratio:", "%.4f" % third_diff_ratio)
+            exit_code_fourth = 2
+        # print("third__first_diff_ratio:", "%.4f" % third_diff_ratio)
+
+        if third_duration[0] - second_duration[1] != 1:
+            exit_code_third = 1
+
+        normalize_audio(pow_spec[second_duration[0]: second_duration[1], :])
     else:
         print("The number of audio section should equal 3.")
 
 
+def merge_short_duration_in_result(result):
+    number = 1
+    # Sometimes there is silence in chime, assume the silence is less than 15（0.15 second）
+    duration_threshold = 15
+    final_result = OrderedDict()
+    for key, value in result.items():
+        if key > 1:
+            if value[1] - value[0] < duration_threshold and result[key - 1][1] - result[key - 1][0] < duration_threshold:
+                number = list(final_result.keys())[-1]
+                final_result[number] = (final_result[number][0], value[1], final_result[number][2])
+            else:
+                number += 1
+                final_result[number] = value
+        else:
+            final_result[number] = value
+
+    return final_result
+
+
+def normalize_audio(data):
+    global frame_length, frame_step
+    frequency_threshold = 200
+    # data[:, frequency_threshold:] = 0
+    print("here")
+    tmp = librosa.istft(data, hop_length=frame_step, win_length=frame_length, dtype=np.float64)
+    out = r"D:\cats\audios\chimes\615_715\real\tmp.wav"
+
+    librosa.output.write_wav(out, tmp, sr=sample_rate)
+    import noisereduce as nr
+
+    # noisy_part = signal[:10000].astype(np.float32)
+    # reduced_noise = nr.reduce_noise(audio_clip=signal.astype(np.float32), noise_clip=noisy_part)
+    #
+
 def process_argv():
-    parser = argparse.ArgumentParser(prog='silence_detect')
+    parser = argparse.ArgumentParser(prog='detect_mix')
     parser.add_argument('--file', '-f', help='The path of the audio file.', required=True)
-    # parser.add_argument('--allSingleFreq', '-a', help='If the audio is all single frequency.', choices=['true', 'false'], default='true')
     return parser.parse_args()
 
 
-if __name__ == '__main__':
+def main():
+    global frame_step, frame_length, sample_rate
     arg = process_argv()
     sample_rate, signal = scipy.io.wavfile.read(arg.file)
-    # sample_rate, signal = scipy.io.wavfile.read(r"D:\cats\bugs\1812\400-800-1200-1600.wav")
-    # pow_spec = calc_stft(signal, sample_rate, NFFT=sample_rate)
+
+    # sig, rate = librosa.load(arg.file, sr=16000)
+    tmp = np.fft.fft(signal)
+    tmp2 = np.fft.ifft(tmp)
+    out = r"D:\cats\audios\chimes\615_715\real\tmp.wav"
+    tmp3 = np.around(np.abs(tmp2), decimals=0, out=None).astype(np.int)
+    tmp3[::2] *= -1
+    tmp4 = np.real(tmp2).astype(np.int)
+    scipy.io.wavfile.write(out, sample_rate, tmp3)
+    # librosa.output.write_wav(out, tmp2, sr=sample_rate)
+
+    # frame_length = int(frame_size * rate)
+
+    import matplotlib.pyplot as plt
+    xf=tmp/len(signal)
+    lens = len(signal)
+    freqs = np.linspace(0, sample_rate/2, len(signal)/2+1)
+    plt.figure(figsize=(16,4))
+    plt.plot(2*np.abs(xf), 'r--')
+
+    plt.xlabel("Frequency(Hz)")
+    plt.ylabel("Amplitude($m$)")
+    plt.title("Amplitude-Frequency curve")
+
+    plt.show()
+
+
+    frame_step = int(frame_stride * rate)
+    result_stft = librosa.stft(sig, n_fft=1024, hop_length=frame_step, win_length=frame_length, dtype=np.float64)
+    # result_stft = result_stft.reshape(result_stft.shape[1], -1)
     pow_spec = calc_stft(signal, sample_rate)
-    # if arg.allSingleFreq == 'true':
-    #     result = detect_mix_for_audio_only_with_single_freq(pow_spec)
-    # else:
-    #     result = detect_mix_for_audio_with_single_and_multi_freq(pow_spec)
-    result, max_freq = detect_mix_for_audio_with_single_and_multi_freq(pow_spec)
-    print('The index and start-end time:')
-    for key, value in result.items():
+    # pow_spec = result_stft
+
+    normalize_audio(result_stft)
+
+    # librosa.fft_frequencies()
+    result, max_freq = detect_mix_for_audio_with_single_and_multi_freq(pow_spec, sample_rate)
+    # for key, value in result.items():
+    #     print(str(key) + ' : ' + "%.2f" % (value[0] * frame_stride) + " - " + "%.2f" % (value[1] * frame_stride))
+    final_result = merge_short_duration_in_result(result)
+    print('The index and start time - end time:')
+    for key, value in final_result.items():
         print(str(key) + ' : ' + "%.2f" % (value[0] * frame_stride) + " - " + "%.2f" % (value[1] * frame_stride))
-    analyze_every_section(pow_spec, result, max_freq)
-    exit(int(str(exit_code_first) + str(exit_code_second) + str(exit_code_third)))
+    analyze_every_section(pow_spec, final_result, max_freq)
+
+    exit(int(str(exit_code_first) + str(exit_code_second) + str(exit_code_third) + str(exit_code_fourth)))
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print(e)
+        traceback.print_exc()
+        exit(-1)
