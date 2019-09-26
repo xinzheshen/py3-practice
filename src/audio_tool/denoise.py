@@ -196,22 +196,22 @@ def removeNoise(
 
 
 if __name__ == '__main__':
-    wav_loc = r"D:\cats\audios\chimes\615_715\real\7500_565_7500_mix.wav"
+    wav_loc = r"D:\cats\audios\chimes\615_715\real\7000_615_7000_not_mix.wav"
     rate, data = wavfile.read(wav_loc)
     data = data / 32768
 
     # fig, ax = plt.subplots(figsize=(20,4))
     # ax.plot(data)
 
-    noise_clip = data[:rate*3]
+    noise_clip = data[rate*1:rate*3]
 
-    output = removeNoise(audio_clip=data, noise_clip=noise_clip,verbose=True,visual=True)
+    output = removeNoise(audio_clip=data, noise_clip=noise_clip,verbose=False,visual=False)
     fig, ax = plt.subplots(nrows=1,ncols=1, figsize=(20,4))
     plt.plot(output, color='black')
     ax.set_xlim((0, len(output)))
     plt.show()
 
-    wavfile.write(r"D:\cats\audios\chimes\615_715\real\7500_565_7500_mix_tmp.wav", rate, output)
+    wavfile.write(r"D:\cats\audios\chimes\615_715\real\7000_615_7000_not_mix_tmp.wav", rate, output)
 
 
     # wav_loc = "assets/audio/fish.wav"

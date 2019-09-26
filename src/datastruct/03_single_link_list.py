@@ -48,8 +48,22 @@ class SingleLinkList(object):
     def remove(self):
         pass
 
-    def searce(self):
+    def search(self):
         pass
+
+    def reverse(self):
+        cur = self.__head
+        h = self.__head
+        pre = None
+        while cur:
+            h = cur
+            tmp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = tmp
+        while h:
+            print(h.elem)
+            h = h.next
 
 
 if __name__ == '__main__':
@@ -67,3 +81,4 @@ if __name__ == '__main__':
     li.append(5)
     li.append(6)
     li.travel()
+    li.reverse()
