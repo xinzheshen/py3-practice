@@ -1,9 +1,9 @@
 
 print("tets_class")
-class testClass:
+class testClass(object):
     def __new__(cls, *args, **kwargs):
         print("new...")
-        return super.__new__(cls)
+        return object.__new__(cls)
 
     def __init__(self):
         print("init...")

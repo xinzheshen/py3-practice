@@ -5,6 +5,11 @@ print("len: ", struct.calcsize('i'))
 print("len: ", struct.calcsize('I'))
 print("len: ", struct.calcsize('h'))
 
+test_dict = {1: 'test'}
+print(test_dict.pop(1))
+
+
+
 import socket, errno
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
