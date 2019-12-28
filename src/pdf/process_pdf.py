@@ -8,6 +8,7 @@ last_word = ""
 strokes_number = ""
 title = "筆畫目錄"
 separation = "……………………………………………"
+num = 0
 
 def read_pdf(file):
     print("Reading pdf file...")
@@ -19,21 +20,28 @@ def read_pdf(file):
 
 
 def process_data(text_lines, page_number):
-    global word_index_dict, last_word, strokes_number
+    global word_index_dict, last_word, strokes_number, num
     text_lines = text_lines.split("\n")
     for line in text_lines:
-        words = line.split(" ")
-        if len(words) == 1:
-            if "畫" in words[0] and "筆畫檢索" != words[0]:
-                strokes_number = words[0]
-                word_index_dict[strokes_number] = OrderedDict()
-                # print(" "*5 + strokes_number + " "*5)
-        else:
-            current_word = words[0][0]
-            if current_word != last_word:
-                word_index_dict[strokes_number][current_word] = str(page_number)
-                # print(current_word + "."*8 + str(page_number))
-                last_word = current_word
+        try:
+            words = line.split(" ")
+            if len(words) == 1:
+                if "畫" in words[0] and "筆畫檢索" != words[0]:
+                    strokes_number = words[0]
+                    word_index_dict[strokes_number] = OrderedDict()
+                    # print(" "*5 + strokes_number + " "*5)
+            else:
+                current_word = words[0].strip()[0]
+                if current_word != "《" and current_word != last_word:
+                    if current_word == "？":
+                        num += 1
+                        current_word = current_word + "_" + str(num)
+                    word_index_dict[strokes_number][current_word] = str(page_number)
+                    # print(current_word + "."*8 + str(page_number))
+                    last_word = current_word
+        except Exception:
+            print("请手动处理 第" + str(page_number) + "页: " + line)
+
 
 
 def set_style(name, height, bold=False, right=False):
@@ -71,7 +79,6 @@ def write_excel(output_file):
     row_num = 0
     for strokes, value in word_index_dict.items():
         row_num += 1
-
         sheet.write_merge(row_num, row_num, 0, 2, strokes, style=strokes_style)
         for word, page in value.items():
             row_num += 1
@@ -92,3 +99,4 @@ if __name__ == '__main__':
     read_pdf(file_path)
     output_file = file_path[0:-4] + "_筆畫目錄.xls"
     write_excel(output_file)
+    print("It's over, good job.")

@@ -28,23 +28,22 @@ def read_excel(file_path, index):
         cell_value_2 = sheet.cell_value(row_no, 2)
         try:
             print(str(row_no) + " : " + cell_value_0, cell_value_1, cell_value_2)
+            if current_group and current_group not in text_dict.keys():
+                text_dict[current_group] = OrderedDict()
+            if cell_value_1:
+                key = cell_value_0[0]
+                if key not in text_dict[current_group].keys():
+                    text_dict[current_group][key] = OrderedDict()
+                if cell_value_0 in words:
+                    text_dict[current_group][key][cell_value_0].extend([cell_value_1, cell_value_2])
+                else:
+                    text_dict[current_group][key][cell_value_0] = [cell_value_1, cell_value_2]
+                words.append(cell_value_0)
+            else:
+                if cell_value_0 != "筆畫檢索":
+                    current_group = cell_value_0
         except Exception:
             ignored_lines.append(str(row_no + 1))
-            continue
-        if current_group and current_group not in text_dict.keys():
-            text_dict[current_group] = OrderedDict()
-        if cell_value_1:
-            key = cell_value_0[0]
-            if key not in text_dict[current_group].keys():
-                text_dict[current_group][key] = OrderedDict()
-            if cell_value_0 in words:
-                text_dict[current_group][key][cell_value_0].extend([cell_value_1, cell_value_2])
-            else:
-                text_dict[current_group][key][cell_value_0] = [cell_value_1, cell_value_2]
-            words.append(cell_value_0)
-        else:
-            if cell_value_0 != "筆畫檢索":
-                current_group = cell_value_0
 
 
 def cmp_to_key(mycmp):
@@ -149,9 +148,10 @@ def write_excel(output_file):
 
 
 if __name__ == '__main__':
-    file_path = sys.argv[1]
-    # with open("./fileName.txt", "br") as f:
-    #     file_path = str(f.readline(), encoding="utf8").strip()
+    # file_path = sys.argv[1]
+    file_path = ""
+    with open("./fileName.txt", "br") as f:
+        file_path = str(f.readline(), encoding="utf8").strip()
     read_excel(file_path, 0)
     process_data()
     output_file = file_path[0:file_path.rfind(".")] + "_排序版.xls"

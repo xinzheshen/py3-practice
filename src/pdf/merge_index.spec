@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['process_pdf.py'],
+a = Analysis(['merge_index.py'],
              pathex=['E:\\code\\py3-practice\\src\\pdf'],
              binaries=[],
              datas=[],
@@ -23,7 +23,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='process_pdf',
+          name='merge_index',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
