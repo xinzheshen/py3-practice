@@ -14,6 +14,16 @@ title = "筆畫檢索"
 word_er = "兒"
 word_op = "（"
 ce = "冊"
+num_dict = {
+    '1': '一',  '2': '二', '3': '三', '4': '四', '5': '五',
+    '6': '六',  '7': '七', '8': '八', '9': '九', '10': '十',
+    '11': '十一',  '12': '十二', '13': '十三', '14': '十四', '15': '十五',
+    '16': '十六',  '17': '十七', '18': '十八', '19': '十九', '20': '二十',
+    '21': '二十一',  '22': '二十二', '23': '二十三', '24': '二十四', '25': '二十五',
+    '26': '二十六',  '27': '二十七', '28': '二十八', '29': '二十九', '30': '三十',
+    '31': '三十一',  '32': '三十二', '33': '三十三', '34': '三十四', '35': '三十五',
+    '36': '三十六',  '37': '三十七', '38': '三十八', '39': '三十九', '40': '四十'
+}
 
 ignored_lines = OrderedDict()
 
@@ -165,17 +175,18 @@ def write_excel_for_merge(output_file):
         row_num += 1
         sheet.write_merge(row_num, row_num, 0, 2, strokes, style=strokes_style)
         for ce_num, detailes in value.items():
-            ce_num = ce + ce_num
+            ce_num = ce + num_dict[ce_num]
             for line in detailes:
                 row_num += 1
                 sheet.write(row_num, 0, line[0], style=detail_style1)
-                sheet.write(row_num, 1, line[1], style=detail_style1)
-                sheet.write(row_num, 2, ce_num, style=detail_style1)
+                sheet.write(row_num, 1, ce_num, style=detail_style1)
+                sheet.write(row_num, 2, line[1], style=detail_style1)
                 sheet.write(row_num, 3, line[2], style=detail_style2)
 
     sheet.col(0).width = int(256*12.61)
-    sheet.col(1).width = int(256*39.23)
-    sheet.col(2).width = int(256*5.74)
+    sheet.col(1).width = int(256*12.61)
+    sheet.col(2).width = int(256*39.23)
+    sheet.col(3).width = int(256*5.74)
     f.save(output_file)
 
 
@@ -209,8 +220,9 @@ def write_excel_for_order(output_file):
                     sheet.write(row_num, 3, detailes[2 + 3*i], style=detail_style2)
 
     sheet.col(0).width = int(256*12.61)
-    sheet.col(1).width = int(256*39.23)
-    sheet.col(2).width = int(256*5.74)
+    sheet.col(1).width = int(256*12.61)
+    sheet.col(2).width = int(256*39.23)
+    sheet.col(3).width = int(256*5.74)
     f.save(output_file)
 
 
