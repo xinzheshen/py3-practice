@@ -32,30 +32,30 @@ class Tree(object):
 
 
     def front_digui(self, root):
-        """利用递归实现树的先序遍历"""
+        """利用递归实现树的先序遍历：根节点->左子树->右子树"""
         if root == None:
             return
-        print(root.elem,)
+        print(root.elem, end=" ")
         self.front_digui(root.lchild)
         self.front_digui(root.rchild)
 
 
     def middle_digui(self, root):
-        """利用递归实现树的中序遍历"""
+        """利用递归实现树的中序遍历：左子树->根节点->右子树"""
         if root == None:
             return
         self.middle_digui(root.lchild)
-        print(root.elem,)
+        print(root.elem, end=" ")
         self.middle_digui(root.rchild)
 
 
     def later_digui(self, root):
-        """利用递归实现树的后序遍历"""
+        """利用递归实现树的后序遍历：左子树->右子树->根节点"""
         if root == None:
             return
         self.later_digui(root.lchild)
         self.later_digui(root.rchild)
-        print(root.elem,)
+        print(root.elem, end=" ")
 
 
     def front_stack(self, root):
@@ -66,7 +66,7 @@ class Tree(object):
         node = root
         while node or myStack:
             while node:                     #从根节点开始，一直找它的左子树
-                print(node.elem,)
+                print(node.elem, end=" ")
                 myStack.append(node)
                 node = node.lchild
             node = myStack.pop()            #while结束表示当前节点node为空，即前一个节点没有左子树了
@@ -84,7 +84,7 @@ class Tree(object):
                 myStack.append(node)
                 node = node.lchild
             node = myStack.pop()            #while结束表示当前节点node为空，即前一个节点没有左子树了
-            print(node.elem,)
+            print(node.elem, end=" ")
             node = node.rchild                  #开始查看它的右子树
 
 
@@ -104,7 +104,7 @@ class Tree(object):
                 myStack1.append(node.rchild)
             myStack2.append(node)
         while myStack2:                         #将myStack2中的元素出栈，即为后序遍历次序
-            print(myStack2.pop().elem,)
+            print(myStack2.pop().elem, end=" ")
 
 
     def level_queue(self, root):
@@ -116,7 +116,7 @@ class Tree(object):
         myQueue.append(node)
         while myQueue:
             node = myQueue.pop(0)
-            print(node.elem,)
+            print(node.elem, end=" ")
             if node.lchild != None:
                 myQueue.append(node.lchild)
             if node.rchild != None:
