@@ -63,7 +63,7 @@ def insert_sort(alist):
     return alist
 
 
-def quick_sort(alist):
+def quick_sort(alist, start, end):
     """
     快速排序,又称划分交换排序:通过一趟排序将要排序的数据分割成独立的两部分，
     其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，
@@ -80,7 +80,78 @@ def quick_sort(alist):
     :param alist:
     :return:
     """
-    pass
+    # 递归的退出条件
+    if start >= end:
+        return
+
+    # 设定起始元素为要寻找位置的基准元素
+    mid = alist[start]
+
+    # low为序列左边的由左向右移动的游标
+    low = start
+
+    # high为序列右边的由右向左移动的游标
+    high = end
+
+    while low < high:
+        # 如果low与high未重合，high指向的元素不比基准元素小，则high向左移动
+        while low < high and alist[high] >= mid:
+            high -= 1
+        # 将high指向的元素放到low的位置上
+        alist[low] = alist[high]
+
+        # 如果low与high未重合，low指向的元素比基准元素小，则low向右移动
+        while low < high and alist[low] < mid:
+            low += 1
+        # 将low指向的元素放到high的位置上
+        alist[high] = alist[low]
+
+    # 退出循环后，low与high重合，此时所指位置为基准元素的正确位置
+    # 将基准元素放到该位置
+    alist[low] = mid
+
+    # 对基准元素左边的子序列进行快速排序
+    quick_sort(alist, start, low-1)
+
+    # 对基准元素右边的子序列进行快速排序
+    quick_sort(alist, low+1, end)
+
+
+def merge_sort(alist):
+    """
+    归并排序：是采用分治法的一个非常典型的应用。归并排序的思想就是先递归分解数组，再合并数组。
+    将数组分解最小之后，然后合并两个有序数组，基本思路是比较两个数组的最前面的数，谁小就先取谁，
+    取了后相应的指针就往后移一位。然后再比较，直至一个数组为空，最后把另一个数组的剩余部分复制过来即可。
+    最优时间复杂度：O(nlogn)
+    最坏时间复杂度：O(nlogn)
+    稳定性：稳定
+    :return:
+    """
+    if len(alist) <= 1:
+        return alist
+    # 二分分解
+    num = len(alist)//2
+    left = merge_sort(alist[:num])
+    right = merge_sort(alist[num:])
+    # 合并
+    return merge(left, right)
+
+
+def merge(left, right):
+    '''合并操作，将两个有序数组left[]和right[]合并成一个大的有序数组'''
+    #left与right的下标指针
+    l, r = 0, 0
+    result = []
+    while l<len(left) and r<len(right):
+        if left[l] < right[r]:
+            result.append(left[l])
+            l += 1
+        else:
+            result.append(right[r])
+            r += 1
+    result += left[l:]
+    result += right[r:]
+    return result
 
 
 if __name__ == '__main__':
@@ -88,4 +159,8 @@ if __name__ == '__main__':
     print(bubble_sort(li.copy()))
     print(selection_sort(li.copy()))
     print(insert_sort((li.copy())))
+    alist = li.copy()
+    quick_sort(alist, 0, len(alist)-1)
+    print(alist)
+    print(merge_sort(li.copy()))
 
