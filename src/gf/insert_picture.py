@@ -41,7 +41,7 @@ pic_file_path = r"D:\work\gf\15-元心.png"
 def load_picture_list(pic_dir):
     pic_dict = {}
     for file in os.listdir(pic_dir):
-        file_key = file.split("_")[-1].split(".")[0]
+        file_key = file.split("_")[0].split(".")[0]
         file_path = os.path.join(pic_dir, file)
         pic_dict[file_key] = file_path
     return pic_dict
@@ -86,15 +86,15 @@ def process_argv():
 
 
 if __name__ == '__main__':
-    arg = process_argv()
+    # arg = process_argv()
 
-    word_file_path = arg.word_file
-    picture_dir = arg.picture_path
-    picture_height = arg.picture_height
+    # word_file_path = arg.word_file
+    # picture_dir = arg.picture_path
+    # picture_height = arg.picture_height
 
-    # word_file_path = r"D:\work\gf\截图\16.第十六 忄篇540.docx"
-    # picture_dir = r"D:\work\gf\截图\pictures\16"
-    # picture_height = 2400000
+    word_file_path = r"D:\work\gf\截图\15.第十五 心268-new.docx"
+    picture_dir = r"D:\work\gf\截图\pictures\15"
+    picture_height = 2400000
 
     picture_dict = load_picture_list(picture_dir)
 

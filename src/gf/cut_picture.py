@@ -42,8 +42,11 @@ def cut_picture_from_pdf():
             x_start = width - right_side
             y_start = top_side
             x = x_start
-            # todo 计数
-            count = page_range_info[3] + (pg - page_range_info[2]) * (6*4) + 1
+            if start_num != -1:
+                count = start_num
+            else:
+                # todo 计数
+                count = page_range_info[3] + (pg - page_range_info[2]) * (6*4) + 1
             for i in range(6):
                 y = y_start
                 for j in range(4):
@@ -54,7 +57,7 @@ def cut_picture_from_pdf():
                     clip = fitz.Rect(tl, br)  # 想要截取的区域
                     pix = page.getPixmap(matrix=mat, alpha=False, clip=clip)
 
-                    pix.writePNG(os.path.join(image_output_dir, f'{pg+1}_{count}.png'))  # 将图片写入指定的文件夹内
+                    pix.writePNG(os.path.join(image_output_dir, f'{count}_{pg+1}.png'))  # 将图片写入指定的文件夹内
 
                     print(f"截取了第{chapter_num}章第{pg+1}页的总第{count}个字的图片。")
 
@@ -62,7 +65,7 @@ def cut_picture_from_pdf():
                     y += y_step
 
                 x -= x_step
-            if page_num is not None:
+            if page_num != 9999:
                 break
 
     # endTime_pdf2img = datetime.datetime.now()  # 结束时间
@@ -90,7 +93,7 @@ def get_process_pages():
     if next_page_info is not None:
         stop_page_num = next_page_info[0]
 
-    if page_num is not None:
+    if page_num != 9999:
         if page_num < start_page_num or page_num > stop_page_num:
             raise Exception(f"指定要处理的第{page_num}页，不在第{chapter_num}章范围内{start_page_num, stop_page_num}")
         else:
@@ -105,7 +108,7 @@ def process_argv():
     parser.add_argument('--pdf_file', help='PDF文件路径', type=str, required=True)
     parser.add_argument('--picture_path', help='截图存放路径', type=str, required=True)
     parser.add_argument('--chapter_num', help='第几章', type=int, default=16, required=False)
-    parser.add_argument('--page_num', help='第几页', type=int, default=None, required=False)
+    parser.add_argument('--page_num', help='第几页', type=int, default=9999, required=False)
     parser.add_argument('--top_side', help='上边界距离截图区宽度', type=float, default=170, required=False)
     parser.add_argument('--right_side', help='右边界距离截图区宽度', type=float, default=80, required=False)
     parser.add_argument('--x_step', help='水平方向每次换列截图时增加的步长', type=float, default=73, required=False)
@@ -117,18 +120,26 @@ def process_argv():
 if __name__ == '__main__':
     # read_pdf(file_path)
 
-    arg = process_argv()
+    # arg = process_argv()
 
-    pdf_file_path = arg.pdf_file
-    picture_output_path = arg.picture_path
-    # pdf_file_path = r"D:\work\gf\截图\世尊寺本字镜.pdf"
-    # picture_output_path = r"D:\work\gf\截图\pictures"
-    chapter_num = arg.chapter_num
-    page_num = arg.page_num
-    top_side = arg.top_side
-    right_side = arg.right_side
-    x_step = arg.x_step
-    y_step = arg.y_step
+    # pdf_file_path = arg.pdf_file
+    # picture_output_path = arg.picture_path
+    # chapter_num = arg.chapter_num
+    # page_num = arg.page_num
+    # top_side = arg.top_side
+    # right_side = arg.right_side
+    # x_step = arg.x_step
+    # y_step = arg.y_step
+
+    pdf_file_path = r"D:\work\gf\截图\世尊寺本字镜.pdf"
+    picture_output_path = r"D:\work\gf\截图\pictures"
+    chapter_num = 15
+    page_num = 88
+    top_side = 205
+    right_side = 77
+    x_step = 70
+    y_step = 133
+    start_num = -1
 
     page_range_info = get_process_pages()
 
